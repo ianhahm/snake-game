@@ -82,7 +82,13 @@ function addHead() {
     let x = snake[snake.length - 1].x + dx;
     let y = snake[snake.length - 1].y + dy;
 
-    if (x > width) {
+    if (x > width || y > height || x < 0 || y < 0) {
+        alert("You lost")
+        clearInterval(timer);
+    }
+ /*  code for no wall collide
+
+     if (x > width) {
         x = 0;
     } else if (y > height) {
         y = 0;
@@ -90,7 +96,7 @@ function addHead() {
         x = width;
     } else if (y < 0) {
         y = height;
-    }
+    }*/
 
     addSnake(x, y);
 }
